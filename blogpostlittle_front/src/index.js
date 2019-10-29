@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import {Feed} from './component/BlogPost/post.js';
 
+import { LocalizeProvider } from "react-localize-redux";
 
 const postList = [
   { postId: 1, postContent: 'Mock Content 1', postTitle: 'Mock title 1', postDate: '10/10/19'},
@@ -11,6 +12,8 @@ const postList = [
 
 
 ReactDOM.render(
-  <Feed posts={postList} />,
+  <LocalizeProvider>
+    <Feed posts={postList} />
+  </LocalizeProvider>,
   document.getElementById('root')
 );
